@@ -2,7 +2,7 @@
   "report_version": "2.0",
   "hostname": "HOST-123",
   "domain": "mfc.ru",
-  "uuid": "123e4567-e89b-12d3-a456-426614174000",
+  "host_id": "123e4567-e89b-12d3-a456-426614174000",
   "tech": {
     "cpu": [									
       "Intel(R) Core(TM) i5-2400",
