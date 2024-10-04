@@ -1,69 +1,68 @@
+# Описание структуры JSON
 
-# JSON Structure Description
+## Метаданные отчета
+- **report_version**: Версия отчета (например, "2.0").
 
-## Report Metadata
-- **report_version**: Version of the report (e.g., "2.0").
+## Информация о системе
+- **hostname**: Сетевое имя машины (например, "HOST-123").
+- **domain**: Домен, к которому принадлежит машина (например, "mfc.ru").
+- **uuid**: Универсальный уникальный идентификатор (UUID) системы Windows (например, "123e4567-e89b-12d3-a456-426614174000").
 
-## System Information
-- **hostname**: The network name of the machine (e.g., "HOST-123").
-- **domain**: Domain the machine belongs to (e.g., "mfc.ru").
-- **uuid**: Universally unique identifier (UUID) of the Windows system (e.g., "123e4567-e89b-12d3-a456-426614174000").
-
-## Technical Information
+## Техническая информация
 - **tech**:
-  - **cpu**: List of CPUs installed on the system. Example:
+  - **cpu**: Список процессоров, установленных в системе. Пример:
     - "Intel(R) Core(TM) i5-2400"
     - "Intel Xeon E5 2630"
-  - **videoadapter**: List of video adapters (GPUs) installed. Example:
+  - **videoadapter**: Список видеокарт, установленных в системе. Пример:
     - "Intel(R) UHD Graphics 630"
     - "NVIDIA GeForce GTX 1050 TI"
-  - **cd_dvd**: Information about the CD/DVD drive (currently not used).
+  - **cd_dvd**: Информация о CD/DVD приводе (в настоящее время не используется).
   - **motherboard**:
-    - **vendor**: The vendor of the motherboard (e.g., "ASUS").
-    - **model**: The model of the motherboard (e.g., "PRIME H410M-K R2.0").
+    - **vendor**: Производитель материнской платы (например, "ASUS").
+    - **model**: Модель материнской платы (например, "PRIME H410M-K R2.0").
   - **os**:
     - **windows**:
-      - **small**: Short description of the Windows operating system (e.g., "Microsoft Windows 10 Pro").
-      - **full**: Detailed description of the Windows version (e.g., "Microsoft Windows 10 Pro 10.0.19042.631 (Win10 20H2 October 2020 Update)").
+      - **small**: Краткое описание операционной системы Windows (например, "Microsoft Windows 10 Pro").
+      - **full**: Полное описание версии Windows (например, "Microsoft Windows 10 Pro 10.0.19042.631 (Win10 20H2 October 2020 Update)").
     - **linux**:
-      - **name**: Name of the Linux distribution (e.g., "Debian GNU/Linux 10").
-      - **version**: Version of the Linux distribution (e.g., "10.1").
-      - **core**: Kernel version of the Linux system (e.g., "Linux 5.18.14-arch1-1 x86_64").
-  - **ram**: Total amount of RAM installed (e.g., "16 ГБ").
-  - **disk**: List of disk drives. Each disk includes:
-    - **model**: Model of the disk (e.g., "TEAM TM8FP6256G").
-    - **size**: Disk size (e.g., "256 ГБ").
-    - **mediatype**: Media type (e.g., "Fixed hard disk media").
+      - **name**: Название дистрибутива Linux (например, "Debian GNU/Linux 10").
+      - **version**: Версия дистрибутива Linux (например, "10.1").
+      - **core**: Версия ядра Linux (например, "Linux 5.18.14-arch1-1 x86_64").
+  - **ram**: Общее количество установленной оперативной памяти (например, "16 ГБ").
+  - **disk**: Список накопителей. Каждый накопитель включает:
+    - **model**: Модель накопителя (например, "TEAM TM8FP6256G").
+    - **size**: Размер накопителя (например, "256 ГБ").
+    - **mediatype**: Тип носителя (например, "Fixed hard disk media").
 
-## Peripherals
+## Периферийные устройства
 - **per**:
-  - **monitor**: List of monitor vendors (e.g., "Dell").
-  - **keyboard**: Vendor of the keyboard (e.g., "Logitech").
-  - **mouse**: Vendor of the mouse (e.g., "Razer").
+  - **monitor**: Список производителей мониторов (например, "Dell").
+  - **keyboard**: Производитель клавиатуры (например, "Logitech").
+  - **mouse**: Производитель мыши (например, "Razer").
 
-## Organizational Information
+## Организационная информация
 - **org**:
-  - **type_arm**: Type of machine, either "serv" (server) or "arm" (workstation).
-  - **inventory**: Inventory number of the system (e.g., "INV-123456").
-  - **cabinet**: Cabinet or room information where the machine is located, as an array:
-    - Room name (e.g., "Кабинет №5").
-    - Address (e.g., "228288, СПБ, улица Пушкина, дом Колотушкина").
-  - **empl**: List of employees associated with the machine. Each entry includes:
-    - **full_name**: Full name of the employee (e.g., "Иванов Иван Иванович").
-    - **position**: Job position (e.g., "Системный администратор").
-    - **structural**: Department or structural unit (e.g., "IT отдел").
+  - **type_arm**: Тип машины, "serv" (сервер) или "arm" (рабочая станция).
+  - **inventory**: Инвентарный номер системы (например, "INV-123456").
+  - **cabinet**: Информация о помещении или кабинете, где находится машина, в виде массива:
+    - Название помещения (например, "Кабинет №5").
+    - Адрес (например, "228288, СПБ, улица Пушкина, дом Колотушкина").
+  - **empl**: Список сотрудников, связанных с машиной. Каждый элемент включает:
+    - **full_name**: Полное имя сотрудника (например, "Иванов Иван Иванович").
+    - **position**: Должность (например, "Системный администратор").
+    - **structural**: Структурное подразделение (например, "IT отдел").
 
-## Network Interfaces
+## Сетевые интерфейсы
 - **interfaces**:
-  - **name**: Name of the network interface (e.g., "eth0").
-  - **state**: Whether the interface is active (true/false).
-  - **ipv4**: List of IPv4 addresses and subnet masks.
-    - **address**: IPv4 address (e.g., "192.168.0.1").
-    - **subnet**: Subnet mask (e.g., "255.255.255.0").
-  - **mac**: List of MAC addresses (e.g., "00:1A:2B:3C:4D:5E").
+  - **name**: Название сетевого интерфейса (например, "eth0").
+  - **state**: Активен ли интерфейс (true/false).
+  - **ipv4**: Список IPv4-адресов и масок подсети.
+    - **address**: IPv4-адрес (например, "192.168.0.1").
+    - **subnet**: Маска подсети (например, "255.255.255.0").
+  - **mac**: Список MAC-адресов (например, "00:1A:2B:3C:4D:5E").
 
-## Installed Applications
-- **app_list**: List of installed applications. Each entry includes:
-  - **name**: Name of the application (e.g., "KES").
-  - **version**: Version of the application (e.g., "1.0.0").
-  - **data_install**: Installation date (e.g., "2023-01-15").
+## Установленные приложения
+- **app_list**: Список установленных приложений. Каждый элемент включает:
+  - **name**: Название приложения (например, "KES").
+  - **version**: Версия приложения (например, "1.0.0").
+  - **data_install**: Дата установки (например, "2023-01-15").
