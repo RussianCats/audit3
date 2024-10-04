@@ -48,7 +48,7 @@
   
   "org": {
     "type_arm": "arm",
-    "description": "",
+    "server_role": "",
     "inventory": "INV-123456",
     "cabinet": {	
       "name":"Кабинет №5",
