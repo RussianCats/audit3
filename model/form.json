@@ -48,6 +48,7 @@
   
   "org": {
     "type_arm": "arm",
+    "description": "",
     "inventory": "INV-123456",
     "cabinet": {	
       "name":"Кабинет №5",
