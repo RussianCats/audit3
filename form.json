@@ -1,14 +1,15 @@
 
 {
-  "hostname": "example-host",  									# сетевое имя 
+  "hostname": "HOST-123",  									# сетевое имя 
+	"domain": "mfc.ru",
   "uuid": "123e4567-e89b-12d3-a456-426614174000",						# uuid windows, по нему я определяю уникальность объекта 
   
   "tech": {
-    "cpu": [										# массив моделей процессоров( может быть несколько процессоров на сервере) (Пример - ["Intel(R) Core(TM) i5-2400", "Intel Xeon E5 2630")
+    "cpu": [									
       "Intel(R) Core(TM) i5-2400",
       "Intel Xeon E5 2630"
     ],
-    "videoadapter": [										# модель видеоадаптера. (Пример - ["Intel(R) UHD Graphics 630", "NVIDIA GeForce GTX 1050 TI")
+    "videoadapter": [										
       "Intel(R) UHD Graphics 630",
       "NVIDIA GeForce GTX 1050 TI"
     ],
@@ -18,13 +19,23 @@
       "model": "PRIME H410M-K R2.0"								# модель материнской платы. (PRIME H410M-K R2.0)
     },
     "os": {
-      "small": "Microsoft Windows 10 Pro",							# записывается наименование ОС. (Пример - Microsoft Windows Server 2012 или Debian 11) (наименование и версия) 
-      "full": "Microsoft Windows 10 Pro 10.0.19042.631 (Win10 20H2 October 2020 Update)"	# учитываем дополнительные сведения, версия винды и билд или вывод команды uname -a  (Пример -Microsoft Windows 10 Pro 10.0.19042.631 (Win10 20H2 October 2020 Update))
-    },
+			"windows":{
+	      "small": "Microsoft Windows 10 Pro",							
+	      "full": "Microsoft Windows 10 Pro 10.0.19042.631 (Win10 20H2 October 2020 Update)"	
+			},
+			"windows":{
+	      "name": "Debian GNU/Linux 10",							
+	      "version": "10.1",
+				"core": ""
+			}
+			},
     "ram": "16 ГБ",										# оперативная память только в гигабайтах и суммарное количество (Пример - 16 ГБ)
     "disk": [
-      ["TEAM TM8FP6256G", "256 ГБ"],								# список дисков в виде ["модель_диска", "суммарный_размер_волюмов"] (Пример - ["TEAM TM8FP6256G", "256 ГБ"])
-      ["Seagate Barracuda", "1 ТБ"]
+			{
+				"model": "TEAM TM8FP6256G",
+				"size":"256 ГБ",
+				"mediatype":"Fixed hard disk media"
+			}
     ]
   },
   
@@ -49,39 +60,27 @@
     ]
   },
 
-
 	"interfaces": [
+		{
+			"name": "eth0",
+			"state": true, 				# включен ли
+			"ipv4": [
 				{
-					"name": "",
-					"state": true,
-						"ipv4": [
-							{
-								"address": "",
-								"subnet": ""
-							}
-						],
-						"ipv6": [
-							{
-								"address": "",
-								"subnet": ""
-							}
-						]
-					}
+					"address": "192.168.0.1",
+					"subnet": "255.255.255.0"
 				}
+			],
+			"mac": [											# список mac адресов всех UP интерфейсов, без виртуальных интерфейсов докера
+			    "00:1A:2B:3C:4D:5E",									
+			    "01:2B:3C:4D:5E:6F"
+  		],
+		}
+	],
 
-  "ipv4": [											# список ip адресов всех UP интерфейсов, без виртуальных интерфейсов докера
-    "192.168.1.1",
-    "10.0.0.1"
-  ],
-  
-  "mac": [											# список mac адресов всех UP интерфейсов, без виртуальных интерфейсов докера
-    "00:1A:2B:3C:4D:5E",									
-    "01:2B:3C:4D:5E:6F"
-  ],
-  
-  "ipt_list": [											# список СЗИ в виде ["наименование_пакета", "версия_пакета", "дата_установки"]
-    ["Antivirus", "1.0.0", "2023-01-15"],
-    ["Firewall", "2.3.4", "2023-02-20"]
+
+  "app_list": [											# список приложений в виде ["наименование_пакета", "версия_пакета", "дата_установки"]
+    ["KES", "1.0.0", "2023-01-15"],
+    ["Firefox", "2.3.4", "2023-02-20"]
   ]
   
 
