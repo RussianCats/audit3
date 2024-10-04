@@ -33,7 +33,7 @@
       {
         "model": "TEAM TM8FP6256G",
         "size": "256 ГБ",
-        "mediatype": "Fixed hard disk media"
+        "storage_type": "Fixed hard disk media"
       }
     ]
   },
