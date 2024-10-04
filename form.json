@@ -1,8 +1,7 @@
-
 {
-  "hostname": "HOST-123",  									# сетевое имя 
-	"domain": "mfc.ru",
-  "uuid": "123e4567-e89b-12d3-a456-426614174000",						# uuid windows, по нему я определяю уникальность объекта 
+  "hostname": "HOST-123",
+  "domain": "mfc.ru",
+  "uuid": "123e4567-e89b-12d3-a456-426614174000",
   
   "tech": {
     "cpu": [									
@@ -13,76 +12,72 @@
       "Intel(R) UHD Graphics 630",
       "NVIDIA GeForce GTX 1050 TI"
     ],
-    "cd_dvd": "",										# модель дисковода, но сейчас это уже не используется
+    "cd_dvd": "",
     "motherboard": {			
-      "vendor": "ASUS",										# вендор материнской платы. (Пример - ASUS)
-      "model": "PRIME H410M-K R2.0"								# модель материнской платы. (PRIME H410M-K R2.0)
+      "vendor": "ASUS",
+      "model": "PRIME H410M-K R2.0"
     },
     "os": {
-			"windows":{
-	      "small": "Microsoft Windows 10 Pro",							
-	      "full": "Microsoft Windows 10 Pro 10.0.19042.631 (Win10 20H2 October 2020 Update)"	
-			},
-			"windows":{
-	      "name": "Debian GNU/Linux 10",							
-	      "version": "10.1",
-				"core": ""
-			}
-			},
-    "ram": "16 ГБ",										# оперативная память только в гигабайтах и суммарное количество (Пример - 16 ГБ)
+      "windows": {
+        "small": "Microsoft Windows 10 Pro",
+        "full": "Microsoft Windows 10 Pro 10.0.19042.631 (Win10 20H2 October 2020 Update)"
+      },
+      "linux": {
+        "name": "Debian GNU/Linux 10",
+        "version": "10.1",
+        "core": ""
+      }
+    },
+    "ram": "16 ГБ",
     "disk": [
-			{
-				"model": "TEAM TM8FP6256G",
-				"size":"256 ГБ",
-				"mediatype":"Fixed hard disk media"
-			}
+      {
+        "model": "TEAM TM8FP6256G",
+        "size": "256 ГБ",
+        "mediatype": "Fixed hard disk media"
+      }
     ]
   },
   
   "per": {
-    "monitor": [										# только вендор монитора
+    "monitor": [
       "Dell"	
     ],
-    "keyboard": "Logitech",									# только вендор клавиатуры
-    "mouse": "Razer"										# только вендор мышки
+    "keyboard": "Logitech",
+    "mouse": "Razer"
   },
   
   "org": {
-    "type_arm": "arm",										# имеет два типа заполнения "serv" или "arm"
-    "inventory": "INV-123456",									# инвентарный номер системного блока
+    "type_arm": "arm",
+    "inventory": "INV-123456",
     "cabinet": [	
-      "Кабинет №5",										# помещение, где находится АРМ/сервер в виде ["наименование_помещения", "адрес"]
+      "Кабинет №5",
       "228288, СПБ, улица Пушкина, дом Колотушкина"
     ],
     "empl": [
-      ["Иванов Иван Иванович", "Системный администратор", "IT отдел"],				# сотрудники записываютсч в виде ["ФИО", "должность", "структурное_подразделение"]
+      ["Иванов Иван Иванович", "Системный администратор", "IT отдел"],
       ["Петров Петр Петрович", "Аналитик", "Отдел анализа данных"]
     ]
   },
 
-	"interfaces": [
-		{
-			"name": "eth0",
-			"state": true, 				# включен ли
-			"ipv4": [
-				{
-					"address": "192.168.0.1",
-					"subnet": "255.255.255.0"
-				}
-			],
-			"mac": [											# список mac адресов всех UP интерфейсов, без виртуальных интерфейсов докера
-			    "00:1A:2B:3C:4D:5E",									
-			    "01:2B:3C:4D:5E:6F"
-  		],
-		}
-	],
+  "interfaces": [
+    {
+      "name": "eth0",
+      "state": true,
+      "ipv4": [
+        {
+          "address": "192.168.0.1",
+          "subnet": "255.255.255.0"
+        }
+      ],
+      "mac": [
+        "00:1A:2B:3C:4D:5E",
+        "01:2B:3C:4D:5E:6F"
+      ]
+    }
+  ],
 
-
-  "app_list": [											# список приложений в виде ["наименование_пакета", "версия_пакета", "дата_установки"]
+  "app_list": [
     ["KES", "1.0.0", "2023-01-15"],
     ["Firefox", "2.3.4", "2023-02-20"]
   ]
-  
-
 }
-
