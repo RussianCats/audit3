@@ -25,7 +25,7 @@
       "linux": {
         "name": "Debian GNU/Linux 10",
         "version": "10.1",
-        "core": "Linux 5.18.14-arch1-1 x86_64"
+        "kernel": "Linux 5.18.14-arch1-1 x86_64"
       }
     },
     "ram": "16 ГБ",
@@ -88,12 +88,12 @@
     {
         "name": "KES",
         "version": "1.0.0",
-        "data_install": "2023-01-15"
+        "install_date": "2023-01-15"
     },
     {
         "name": "Firefox",
         "version": "2.3.4",
-        "data_install": "2023-02-20"
+        "install_date": "2023-02-20"
     }
   ]
 }
